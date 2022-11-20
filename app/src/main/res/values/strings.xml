@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Moliviti</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    NavigationDrawer-->
+    <string name="home">Inicio</string>
+    <string name="routes">Rutas</string>
+    <string name="card_bus">Tu llave</string>
+    <string name="favorites">Favoritos</string>
+    <string name="about">Acerca de</string>
+    <string name="settings">Configuracion</string>
+    <string name="navdrawer_profile_name">Johanna</string>
+    <string name="navdrawer_profile_email">example@email.com</string>
+    <string name="open">Abrir</string>
+    <string name="close">Cerrar</string>
+
+    <!--    ToolBar-->
+    <string name="toolbar_title">Moliviti</string>
 </resources>

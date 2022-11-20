@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.android.moliviti.home_fragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/checkBusCardFragment"
+        android:name="com.example.android.moliviti.CheckBusCardFragment"
+        android:label="check_bus_card_fragment"
+        tools:layout="@layout/check_card_bus_fragment" />
+    <fragment
+        android:id="@+id/rechargeCardBusFragment"
+        android:name="com.example.android.moliviti.RechargeCardBusFragment"
+        android:label="recharge_card_bus_fragment"
+        tools:layout="@layout/recharge_card_bus_fragment" />
+</navigation>
