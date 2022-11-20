@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
+import androidx.navigation.*
 import androidx.navigation.fragment.NavHostFragment
 import com.example.android.moliviti.databinding.ActivityMainBinding
 
@@ -26,10 +26,14 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
         binding.navView.setNavigationItemSelectedListener{ menuItem ->
             when(menuItem.itemId){
                 R.id.nav_home -> {
-                    Toast.makeText(this, "Inicio fue clickeado", Toast.LENGTH_SHORT).show()
+                    navController.popBackStack(R.id.home_fragment, true)
+                    navController.navigate(R.id.home_fragment)
                     binding.drawerLayout.close()
                 }
                 R.id.nav_bus -> {
@@ -37,8 +41,13 @@ class MainActivity : AppCompatActivity() {
                     binding.drawerLayout.close()
                 }
                 R.id.nav_card -> {
-                    Toast.makeText(this, "Tu llave fue clickeado", Toast.LENGTH_SHORT).show()
-                    binding.drawerLayout.close()
+                    if(navController.currentDestination == navController.findDestination(R.id.checkBusCardFragment)){
+                        binding.drawerLayout.close()
+                    } else {
+                        navController.navigate(R.id.action_home_fragment_to_checkBusCardFragment)
+                        binding.drawerLayout.close()
+                    }
+
                 }
                 R.id.nav_fav -> {
                     Toast.makeText(this, "Favoritos fue clickeado", Toast.LENGTH_SHORT).show()
@@ -55,9 +64,10 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+    }
 
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        navController = navHostFragment.navController
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

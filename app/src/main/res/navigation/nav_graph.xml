@@ -9,12 +9,27 @@
         android:id="@+id/home_fragment"
         android:name="com.example.android.moliviti.home_fragment"
         android:label="home_fragment"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_home_fragment_to_checkBusCardFragment"
+            app:destination="@id/checkBusCardFragment"
+            app:popUpTo="@id/checkBusCardFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/checkBusCardFragment"
         android:name="com.example.android.moliviti.CheckBusCardFragment"
         android:label="check_bus_card_fragment"
-        tools:layout="@layout/check_card_bus_fragment" />
+        tools:layout="@layout/check_card_bus_fragment" >
+        <action
+            android:id="@+id/action_checkBusCardFragment_to_rechargeCardBusFragment"
+            app:destination="@id/rechargeCardBusFragment" />
+        <action
+            android:id="@+id/action_checkBusCardFragment_to_home_fragment"
+            app:destination="@id/home_fragment"
+            app:popUpTo="@id/home_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/rechargeCardBusFragment"
         android:name="com.example.android.moliviti.RechargeCardBusFragment"
