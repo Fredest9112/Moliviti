@@ -27,11 +27,12 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        binding.navView.setNavigationItemSelectedListener{ menuItem ->
-            when(menuItem.itemId){
+        binding.navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
                 R.id.nav_home -> {
                     navController.popBackStack(R.id.home_fragment, true)
                     navController.navigate(R.id.home_fragment)
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                     binding.drawerLayout.close()
                 }
                 R.id.nav_card -> {
-                    if(navController.currentDestination == navController.findDestination(R.id.checkBusCardFragment)){
+                    if (navController.currentDestination == navController.findDestination(R.id.checkBusCardFragment)) {
                         binding.drawerLayout.close()
                     } else {
                         navController.navigate(R.id.action_home_fragment_to_checkBusCardFragment)
@@ -72,9 +73,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-    if (toggle.onOptionsItemSelected(item)){
-        return true
-    }
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
         return super.onOptionsItemSelected(item)
     }
 }
