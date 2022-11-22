@@ -1,4 +1,4 @@
-package com.example.android.moliviti
+package com.example.android.moliviti.views
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.*
 import androidx.navigation.fragment.NavHostFragment
+import com.example.android.moliviti.R
 import com.example.android.moliviti.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

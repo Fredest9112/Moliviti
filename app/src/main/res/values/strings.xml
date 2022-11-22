@@ -16,4 +16,21 @@
 
     <!--    ToolBar-->
     <string name="toolbar_title">Moliviti</string>
+
+    <!--    checkCardBusFragment-->
+    <string name="check_card_title">Tu Recarga</string>
+    <string name="check_card_current_amount">Saldo Actual</string>
+    <string name="check_card_charge">Recargar</string>
+
+    <!--    rechargeCardBusFragment-->
+    <string name="recharge_card_title">Valor Recarga:</string>
+    <string name="recharge_card_name_recharger">Nombre:</string>
+    <string name="recharge_card_id_recharger">Documento:</string>
+    <string name="recharge_card_email_recharger">Correo:</string>
+    <string name="recharge_card_charge">Recargar</string>
+    <string name="recharge_card_hint_charge">Valor a recargar</string>
+    <string name="recharge_card_hint_name">Ingresa tu nombre</string>
+    <string name="recharge_card_hint_id">Ingresa tu documento</string>
+    <string name="recharge_card_hint_email">Ingresa tu email</string>
+    <string name="privacy_policy">Estoy de acuerdo con los terminos del servicio \n y la politica de privacidad.</string>
 </resources>

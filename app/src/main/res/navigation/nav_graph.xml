@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.example.android.moliviti.home_fragment"
+        android:name="com.example.android.moliviti.views.home_fragment"
         android:label="home_fragment"
         tools:layout="@layout/home_fragment" >
         <action
@@ -32,7 +32,13 @@
     </fragment>
     <fragment
         android:id="@+id/rechargeCardBusFragment"
-        android:name="com.example.android.moliviti.RechargeCardBusFragment"
+        android:name="com.example.android.moliviti.views.RechargeCardBusFragment"
         android:label="recharge_card_bus_fragment"
-        tools:layout="@layout/recharge_card_bus_fragment" />
+        tools:layout="@layout/recharge_card_bus_fragment" >
+        <action
+            android:id="@+id/action_rechargeCardBusFragment_to_checkBusCardFragment"
+            app:destination="@id/checkBusCardFragment"
+            app:popUpTo="@id/checkBusCardFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
